@@ -8,7 +8,7 @@ checksum = "1b6a2d3371669ab3ca9797670853d61402b03d0b4b9ebf33d677dfa720203072"
 dependencies = [
  "cpp_demangle",
  "fallible-iterator",
- "gimli 0.22.0",
+ "gimli",
  "object 0.20.0",
  "rustc-demangle",
  "smallvec",
@@ -64,12 +64,13 @@ checksum = "a4c527152e37cf757a3f78aae5a06fbeefdb07ccc535c980a3208ee3060dd544"
 
 [[package]]
 name = "as-slice"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "37dfb65bc03b2bc85ee827004f14a6817e04160e3b1a28931986a666a9290e70"
+checksum = "bb4d1c23475b74e3672afa8c2be22040b8b7783ad9b461021144ed10a46bb0e6"
 dependencies = [
  "generic-array 0.12.3",
  "generic-array 0.13.2",
+ "generic-array 0.14.4",
  "stable_deref_trait",
 ]
 
@@ -135,9 +136,9 @@ checksum = "08c48aae112d48ed9f069b33538ea9e3e90aa263cfa3d1c24309612b1f7472de"
 
 [[package]]
 name = "cc"
-version = "1.0.59"
+version = "1.0.60"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "66120af515773fb005778dc07c261bd201ec8ce50bd6e7144c927753fe013381"
+checksum = "ef611cc68ff783f18535d77ddd080185275713d852c4f5cbb6122c462a7a825c"
 
 [[package]]
 name = "cfg-if"
@@ -226,7 +227,7 @@ dependencies = [
 [[package]]
 name = "defmt"
 version = "0.1.0"
-source = "git+https://github.com/knurling-rs/defmt.git?branch=main#be7f4a7cbe8a61e005f55fed1a41b11f85cb8ed6"
+source = "git+https://github.com/knurling-rs/defmt.git?branch=main#3aa4e70ee73067aaaa736afa42bba2e43d576be7"
 dependencies = [
  "defmt-common",
  "defmt-macros",
@@ -235,12 +236,12 @@ dependencies = [
 [[package]]
 name = "defmt-common"
 version = "0.1.0"
-source = "git+https://github.com/knurling-rs/defmt.git?branch=main#be7f4a7cbe8a61e005f55fed1a41b11f85cb8ed6"
+source = "git+https://github.com/knurling-rs/defmt.git?branch=main#3aa4e70ee73067aaaa736afa42bba2e43d576be7"
 
 [[package]]
 name = "defmt-decoder"
 version = "0.1.0"
-source = "git+https://github.com/knurling-rs/defmt.git?branch=main#be7f4a7cbe8a61e005f55fed1a41b11f85cb8ed6"
+source = "git+https://github.com/knurling-rs/defmt.git?branch=main#3aa4e70ee73067aaaa736afa42bba2e43d576be7"
 dependencies = [
  "byteorder",
  "colored",
@@ -253,18 +254,18 @@ dependencies = [
 [[package]]
 name = "defmt-elf2table"
 version = "0.1.0"
-source = "git+https://github.com/knurling-rs/defmt.git?branch=main#be7f4a7cbe8a61e005f55fed1a41b11f85cb8ed6"
+source = "git+https://github.com/knurling-rs/defmt.git?branch=main#3aa4e70ee73067aaaa736afa42bba2e43d576be7"
 dependencies = [
  "anyhow",
  "defmt-decoder",
- "gimli 0.22.0",
+ "gimli",
  "object 0.21.1",
 ]
 
 [[package]]
 name = "defmt-macros"
 version = "0.1.0"
-source = "git+https://github.com/knurling-rs/defmt.git?branch=main#be7f4a7cbe8a61e005f55fed1a41b11f85cb8ed6"
+source = "git+https://github.com/knurling-rs/defmt.git?branch=main#3aa4e70ee73067aaaa736afa42bba2e43d576be7"
 dependencies = [
  "defmt-parser",
  "proc-macro2",
@@ -275,18 +276,7 @@ dependencies = [
 [[package]]
 name = "defmt-parser"
 version = "0.1.0"
-source = "git+https://github.com/knurling-rs/defmt.git?branch=main#be7f4a7cbe8a61e005f55fed1a41b11f85cb8ed6"
-
-[[package]]
-name = "derivative"
-version = "2.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cb582b60359da160a9477ee80f15c8d784c477e69c217ef2cdd4169c24ea380f"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
-]
+source = "git+https://github.com/knurling-rs/defmt.git?branch=main#3aa4e70ee73067aaaa736afa42bba2e43d576be7"
 
 [[package]]
 name = "dtoa"
@@ -331,9 +321,9 @@ dependencies = [
 
 [[package]]
 name = "flate2"
-version = "1.0.17"
+version = "1.0.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "766d0e77a2c1502169d4a93ff3b8c15a71fd946cd0126309752104e5f3c46d94"
+checksum = "da80be589a72651dcda34d8b35bcdc9b7254ad06325611074d9cc0fbb19f60ee"
 dependencies = [
  "cfg-if",
  "crc32fast",
@@ -360,14 +350,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "gimli"
-version = "0.21.0"
+name = "generic-array"
+version = "0.14.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bcc8e0c9bce37868955864dbecd2b1ab2bdf967e6f28066d65aaac620444b65c"
+checksum = "501466ecc8a30d1d3b7fc9229b122b2ce8ed6e9d9223f1138d4babb253e51817"
 dependencies = [
- "fallible-iterator",
- "indexmap",
- "stable_deref_trait",
+ "typenum",
+ "version_check",
 ]
 
 [[package]]
@@ -400,9 +389,9 @@ dependencies = [
 
 [[package]]
 name = "hashbrown"
-version = "0.9.0"
+version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "00d63df3d41950fb462ed38308eea019113ad1508da725bbedcd0fa5a85ef5f7"
+checksum = "d7afe4a420e3fe79967a00898cc1f4db7c8a49a9333a29f8a4bd76a253d5cd04"
 
 [[package]]
 name = "heck"
@@ -415,9 +404,9 @@ dependencies = [
 
 [[package]]
 name = "hermit-abi"
-version = "0.1.15"
+version = "0.1.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3deed196b6e7f9e44a2ae8d94225d80302d81208b1bb673fd21fe634645c85a9"
+checksum = "4c30f6d0bc6b00693347368a67d41b58f2fb851215ff1da49e90fe2c5c667151"
 dependencies = [
  "libc",
 ]
@@ -484,27 +473,33 @@ checksum = "3576a87f2ba00f6f106fdfcd16db1d698d648a26ad8e0573cad8537c3c362d2a"
 
 [[package]]
 name = "libc"
-version = "0.2.76"
+version = "0.2.78"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "755456fae044e6fa1ebbbd1b3e902ae19e73097ed4ed87bb79934a867c007bc3"
+checksum = "aa7087f49d294270db4e1928fc110c976cd4b9e5a16348e0a1df09afa99e6c98"
 
 [[package]]
 name = "libflate"
-version = "0.1.27"
+version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d9135df43b1f5d0e333385cb6e7897ecd1a43d7d11b91ac003f4d2c2d2401fdd"
+checksum = "e9bac9023e1db29c084f9f8cd9d3852e5e8fddf98fb47c4964a0ea4663d95949"
 dependencies = [
  "adler32",
  "crc32fast",
+ "libflate_lz77",
  "rle-decode-fast",
- "take_mut",
 ]
 
 [[package]]
-name = "libusb1-sys"
-version = "0.3.7"
+name = "libflate_lz77"
+version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "71d9ddd446b6f233a79ef7e6f73de63a58f3a9047d60c46f15cda31452a8f86e"
+checksum = "3286f09f7d4926fc486334f28d8d2e6ebe4f7f9994494b6dab27ddfad2c9b11b"
+
+[[package]]
+name = "libusb1-sys"
+version = "0.4.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1f02e930161703cc97c0aab3a905feb9740db03a80910f31ab0f8fa309223f39"
 dependencies = [
  "cc",
  "libc",
@@ -531,11 +526,12 @@ dependencies = [
 
 [[package]]
 name = "miniz_oxide"
-version = "0.4.1"
+version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4d7559a8a40d0f97e1edea3220f698f78b1c5ab67532e49f68fde3910323b722"
+checksum = "c60c0dfe32c10b43a144bad8fc83538c52f58302c92300ea7ec7bf7b38d5a7b9"
 dependencies = [
  "adler",
+ "autocfg",
 ]
 
 [[package]]
@@ -591,36 +587,6 @@ checksum = "b4596b6d070b27117e987119b4dac604f3c58cfb0b191112e24771b2faeac1a6"
 
 [[package]]
 name = "probe-rs"
-version = "0.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ede5b4a775f2d77fb049a045683ad23ba2ac8901945825ef004551695322e09a"
-dependencies = [
- "anyhow",
- "base64",
- "bitfield",
- "derivative",
- "enum-primitive-derive",
- "gimli 0.21.0",
- "goblin",
- "hidapi",
- "ihex",
- "jaylink",
- "jep106",
- "lazy_static",
- "log",
- "num-traits",
- "object 0.20.0",
- "probe-rs-t2rust 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "rusb",
- "scroll",
- "serde",
- "serde_yaml",
- "svg 0.7.2",
- "thiserror",
-]
-
-[[package]]
-name = "probe-rs"
 version = "0.9.0"
 source = "git+https://github.com/mattico/probe-rs?branch=usbdk#7fd2c7071ac931fbd5fb243331a9cf18dae3eb8a"
 dependencies = [
@@ -629,7 +595,7 @@ dependencies = [
  "bitfield",
  "bitvec",
  "enum-primitive-derive",
- "gimli 0.22.0",
+ "gimli",
  "goblin",
  "hidapi",
  "ihex",
@@ -639,23 +605,22 @@ dependencies = [
  "log",
  "num-traits",
  "object 0.21.1",
- "probe-rs-t2rust 0.6.0 (git+https://github.com/mattico/probe-rs?branch=usbdk)",
+ "probe-rs-t2rust",
  "rusb",
  "scroll",
  "serde",
  "serde_yaml",
- "svg 0.8.0",
+ "svg",
  "thiserror",
 ]
 
 [[package]]
 name = "probe-rs-rtt"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c45be9a80d981475a5e982adf0890949fcfbe60fb2b47ba38d4bd7cc82541193"
+version = "0.4.0"
+source = "git+https://github.com/mattico/probe-rs-rtt?branch=usbdk#4c4a438424851753a710889ddc072c6b406c2489"
 dependencies = [
  "log",
- "probe-rs 0.8.0",
+ "probe-rs",
  "scroll",
  "thiserror",
 ]
@@ -664,19 +629,6 @@ dependencies = [
 name = "probe-rs-t2rust"
 version = "0.6.0"
 source = "git+https://github.com/mattico/probe-rs?branch=usbdk#7fd2c7071ac931fbd5fb243331a9cf18dae3eb8a"
-dependencies = [
- "base64",
- "proc-macro2",
- "quote",
- "scroll",
- "serde_yaml",
-]
-
-[[package]]
-name = "probe-rs-t2rust"
-version = "0.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6e0e2d177a33e8c8a46d98767fb01877f1c466826b9c25f88749f35140d0aae0"
 dependencies = [
  "base64",
  "proc-macro2",
@@ -695,10 +647,10 @@ dependencies = [
  "colored",
  "defmt-decoder",
  "defmt-elf2table",
- "gimli 0.22.0",
+ "gimli",
  "log",
  "object 0.20.0",
- "probe-rs 0.9.0",
+ "probe-rs",
  "probe-rs-rtt",
  "rustc-demangle",
  "signal-hook",
@@ -731,9 +683,9 @@ dependencies = [
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.20"
+version = "1.0.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "175c513d55719db99da20232b06cda8bab6b83ec2d04e3283edf0213c37c1a29"
+checksum = "1e0704ee1a7e00d7bb417d0770ea303c1bccbabf0ef1667dae92b5967f5f8a71"
 dependencies = [
  "unicode-xid",
 ]
@@ -782,9 +734,9 @@ dependencies = [
 
 [[package]]
 name = "rusb"
-version = "0.6.3"
+version = "0.6.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "327ba984f811d7e34f52f08b5745911ce89c432e1098879f2f8288c76a88aa0c"
+checksum = "67fa037368ee577fca9ef237c5ec129084c18e7e3e5987cc611fb8b2d78cf84a"
 dependencies = [
  "libc",
  "libusb1-sys",
@@ -848,18 +800,18 @@ checksum = "388a1df253eca08550bef6c72392cfe7c30914bf41df5269b68cbd6ff8f570a3"
 
 [[package]]
 name = "serde"
-version = "1.0.115"
+version = "1.0.116"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e54c9a88f2da7238af84b5101443f0c0d0a3bbdc455e34a5c9497b1903ed55d5"
+checksum = "96fe57af81d28386a513cbc6858332abc6117cfdb5999647c6444b8f43a370a5"
 dependencies = [
  "serde_derive",
 ]
 
 [[package]]
 name = "serde_derive"
-version = "1.0.115"
+version = "1.0.116"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "609feed1d0a73cc36a0182a840a9b37b4a82f0b1150369f0536a9e3f2a31dc48"
+checksum = "f630a6370fd8e457873b4bd2ffdae75408bc291ba72be773772a4c2a065d9ae8"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -918,9 +870,9 @@ checksum = "8ea5119cdb4c55b55d432abb513a0429384878c15dde60cc77b1c99de1a95a6a"
 
 [[package]]
 name = "structopt"
-version = "0.3.17"
+version = "0.3.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6cc388d94ffabf39b5ed5fadddc40147cb21e605f53db6f8f36a625d27489ac5"
+checksum = "a33f6461027d7f08a13715659b2948e1602c31a3756aeae9378bfe7518c72e82"
 dependencies = [
  "clap",
  "lazy_static",
@@ -929,9 +881,9 @@ dependencies = [
 
 [[package]]
 name = "structopt-derive"
-version = "0.4.10"
+version = "0.4.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5e2513111825077552a6751dfad9e11ce0fba07d7276a3943a037d7e93e64c5f"
+checksum = "c92e775028122a4b3dd55d58f14fc5120289c69bee99df1d117ae30f84b225c9"
 dependencies = [
  "heck",
  "proc-macro-error",
@@ -942,32 +894,20 @@ dependencies = [
 
 [[package]]
 name = "svg"
-version = "0.7.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3685c82a045a6af0c488f0550b0f52b4c77d2a52b0ca8aba719f9d268fa96965"
-
-[[package]]
-name = "svg"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0b65a64d32a41db2a8081aa03c1ccca26f246ff681add693f8b01307b137da79"
 
 [[package]]
 name = "syn"
-version = "1.0.40"
+version = "1.0.42"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "963f7d3cc59b59b9325165add223142bbf1df27655d07789f109896d353d8350"
+checksum = "9c51d92969d209b54a98397e1b91c8ae82d8c87a7bb87df0b29aa2ad81454228"
 dependencies = [
  "proc-macro2",
  "quote",
  "unicode-xid",
 ]
-
-[[package]]
-name = "take_mut"
-version = "0.2.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f764005d11ee5f36500a149ace24e00e3da98b0158b3e2d53a7495660d3f4d60"
 
 [[package]]
 name = "tar"
