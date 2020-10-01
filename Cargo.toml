@@ -21,8 +21,8 @@ gimli = "0.22.0"
 log = { version = "0.4.11", features = ["std"] }
 # an addr2line trait is implement for a type in this particular version
 object = "0.20.0"
-probe-rs = { git = 'https://github.com/mattico/probe-rs', branch = 'usbdk' }
-probe-rs-rtt = { git = 'https://github.com/mattico/probe-rs-rtt', branch = 'usbdk' }
+probe-rs = { path = "../probe-rs/probe-rs" }
+probe-rs-rtt = { path = "../probe-rs-rtt/probe-rs-rtt" }
 rustc-demangle = "0.1.16"
 signal-hook = "0.1.16"
 structopt = "0.3.15"
