@@ -37,3 +37,8 @@ hidapi = "=1.2.3"
 [features]
 # this feature does nothing and it's kept for backwards compatibility; it will be removed in the next semver bump
 defmt = []
+
+[patch.crates-io]
+probe-rs = { git = "https://github.com/mattico/probe-rs", branch = "jaylink-master" }
+probe-rs-rtt = { git = "https://github.com/mattico/probe-rs-rtt", branch = "jaylink-master" }
+jaylink = { git = "https://github.com/jonas-schievink/jaylink", rev = "7fa2d44" }
