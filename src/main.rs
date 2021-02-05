@@ -29,7 +29,7 @@ use object::{
     read::{File as ElfFile, Object as _, ObjectSection as _},
     ObjectSegment, ObjectSymbol, SymbolSection,
 };
-use probe_rs::config::{registry, MemoryRegion, RamRegion};
+use probe_rs::config::{MemoryRegion, RamRegion};
 use probe_rs::{
     flashing::{self, Format},
     Core, CoreRegisterAddress, DebugProbeInfo, MemoryInterface, Probe, Session,
@@ -144,7 +144,7 @@ fn notmain() -> Result<i32, anyhow::Error> {
     let bytes = fs::read(elf_path)?;
     let elf = ElfFile::parse(&bytes)?;
 
-    let target = probe_rs::config::registry::get_target_by_name(chip)?;
+    let target = probe_rs::config::get_target_by_name(chip)?;
 
     let mut ram_region = None;
     for region in &target.memory_map {
@@ -331,7 +331,7 @@ fn notmain() -> Result<i32, anyhow::Error> {
         // program lives in Flash
         let size = program_size_of(&elf);
         log::info!("flashing program ({:.02} KiB)", size as f64 / 1024.0);
-        flashing::download_file(&mut sess, elf_path, Format::Elf)?;
+        flashing::download_file(&mut sess, &elf_path, Format::Elf)?;
         log::info!("success!");
     }
 
@@ -924,7 +924,7 @@ fn print_probes(probes: Vec<DebugProbeInfo>) -> Result<i32, anyhow::Error> {
 }
 
 fn print_chips() -> Result<i32, anyhow::Error> {
-    let registry = registry::families().expect("Could not retrieve chip family registry");
+    let registry = probe_rs::config::families().expect("Could not retrieve chip family registry");
     for chip_family in registry {
         println!("{}", chip_family.name);
         println!("    Variants:");

@@ -28,3 +28,11 @@ rustc-demangle = "0.1.16"
 signal-hook = "0.3.4"
 structopt = "0.3.15"
 hidapi = "1.2.5"
+
+[patch.'https://github.com/knurling-rs/defmt']
+defmt-decoder = { path = "../defmt/decoder" }
+
+[patch.crates-io]
+probe-rs = { path = "../probe-rs/probe-rs" }
+probe-rs-rtt = { path = "../probe-rs-rtt/probe-rs-rtt" }
+jaylink = { path = "../jaylink" }
